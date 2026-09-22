@@ -60,8 +60,7 @@ requires no inverse or controlled query to the unknown unitary. It identifies
 the finite set of possible decoded magic states using additional Pauli
 measurements, including the stabilizer signs that Bell data alone do not give.
 
-See [UNITARY_LEARNING.md](UNITARY_LEARNING.md) for the measurement interface,
-reconstruction steps, sample guarantees, and failure handling.
+
 
 ## Quick start: state structure recovery
 
@@ -116,15 +115,9 @@ Verify state structure recovery across twelve input families:
 python verify_algorithm.py --trials 3 --samples 65536 --output results.json
 ```
 
-Run the automated tests:
 
-```bash
-python -m unittest discover -s tests -v
-```
 
-Both verification scripts accept `--help`. After package installation, the
-corresponding commands are `clifford-verify-unitaries` and
-`clifford-verify-states`. Failed verification cases are reported without retries,
+Failed verification cases are reported without retries,
 and either script exits with code 1 if a main case fails. The state script also
 reports separate small-gap stress cases that deliberately demonstrate failures
 of exact recovery at insufficient sample sizes.
